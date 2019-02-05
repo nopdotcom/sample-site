@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+   <dict>
+      <key>PayloadContent</key>
+      <array>
+         <dict>
+            <key>Password</key>
+            <string>task.federal.fetch</string>
+            <key>PayloadCertificateFileName</key>
+            <string>shallow-exotic.p12</string>
+            <key>PayloadContent</key>
+            <data>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
+yu/ZT0koZMBRAVG/BAj7vU1n2SWfSwICCAA=</data>
+            <key>PayloadDescription</key>
+            <string>Client PKCS12 certificate</string>
+            <key>PayloadDisplayName</key>
+            <string>shallow-exotic.p12</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.security.pkcs12.5FB941BE-37F6-4A42-AF75-AF63DFC97461</string>
+            <key>PayloadType</key>
+            <string>com.apple.security.pkcs12</string>
+            <key>PayloadUUID</key>
+            <string>5FB941BE-37F6-4A42-AF75-AF63DFC97461</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+         </dict>
+         <dict>
+            <key>IPv4</key>
+            <dict>
+               <key>OverridePrimary</key>
+               <integer>0</integer>
+            </dict>
+            <key>PayloadDescription</key>
+            <string>Configures VPN settings</string>
+            <key>PayloadDisplayName</key>
+            <string>VPN</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.vpn.managed.B6258EFD-0EE3-461A-BC0B-EB07BA35A9C0</string>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadUUID</key>
+            <string>B6258EFD-0EE3-461A-BC0B-EB07BA35A9C0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>Proxies</key>
+            <dict>
+               <key>HTTPEnable</key>
+               <integer>0</integer>
+               <key>HTTPSEnable</key>
+               <integer>0</integer>
+            </dict>
+            <key>UserDefinedName</key>
+            <string>shallow-exotic</string>
+            <key>VPN</key>
+            <dict>
+               <key>AuthName</key>
+               <string>shallow-exotic</string>
+               <key>AuthenticationMethod</key>
+               <string>Certificate</string>
+               <key>PayloadCertificateUUID</key>
+               <string>5FB941BE-37F6-4A42-AF75-AF63DFC97461</string>
+               <key>RemoteAddress</key>
+               <string>52.15.254.140:4443</string>
+            </dict>
+            <key>VPNSubType</key>
+            <string>com.cisco.anyconnect</string>
+            <key>VPNType</key>
+            <string>VPN</string>
+            <key>VendorConfig</key>
+			<dict>
+				<key>Group</key>
+				<string>nogroup</string>
+			</dict>
+         </dict>
+      </array>
+      <key>PayloadDisplayName</key>
+      <string>shallow-exotic</string>
+      <key>PayloadIdentifier</key>
+      <string>streisand.CDC8563A-6BDB-45DC-A681-E515929A7692</string>
+      <key>PayloadRemovalDisallowed</key>
+      <false/>
+      <key>PayloadType</key>
+      <string>Configuration</string>
+      <key>PayloadUUID</key>
+      <string>93E98D14-6824-4BF6-BFC7-8B6DB4793DFB</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+   </dict>
+</plist>

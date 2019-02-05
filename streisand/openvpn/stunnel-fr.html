@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="stunnel-fr.html">Français</a>&nbsp;
+  <a href="stunnel.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>OpenVPN (enveloppé dans stunnel)</h2>
+
+<p>Ces instructions ne doivent être utilisées que si les connexions OpenVPN sont bloquées activement dans votre pays ou par votre FAI. La performance sera meilleure si vous pouvez vous connecter directement, mais certains pays (notamment la Chine et l'Iran) emploient 'Deep Packet Inspection' pour détecter et affronter les connexions OpenVPN. Certaines entreprises font de même. Si vous ne rentrez pas dans cette catégorie, reportez-vous à la norme <a href="/openvpn/index-fr.html">instructions OpenVPN</a> à la place.</p>
+
+<p>Suite à ces étapes, vous enveloppez votre trafic OpenVPN dans un tunnel crypté, de sorte qu'il ressemblera comme du trafic SSL standard soit dirigé vers un port où ce type de trafic serait attendu. Cela empêchera le 'DPI' d'identifier la nature veritable de vos paquets, ce qui vous permetera d'utiliser OpenVPN librement.</p>
+
+<h4>Une note sur les fichiers clients</h4>
+
+<p>Pour des raisons de sécurité, les clients OpenVPN ont généralement leurs propres certificats et clés privées. Le serveur auquel vous vous connectez a été configuré pour permettre aux clients de partager le même certificat et la même clé privée, mais vous pouvez éventuellement donner à votre téléphone et votre ordinateur portable des clés différentes, par exemple.</p>
+
+<hr />
+
+<ul>
+<li>Plateformes
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS</a></li>
+</ul></li>
+</ul>
+
+<p><a name="windows"></a></p>
+
+<h3>Windows</h3>
+
+<h4>Installation Stunnel</h4>
+
+<ol>
+<li>Téléchargez et exécutez <a href="/mirror/index-fr.html#stunnel">l'installateur stunnel</a>.</li>
+<li>Téléchargez le fichier <code>stunnel.conf</code> qui a été personnalisé pour fonctionner avec ce serveur:
+<ul>
+<li><a href="/openvpn/stunnel.conf">stunnel.conf</a></li>
+</ul></li>
+<li>Ouvrez le répertoire où vous avez installé stunnel. Pour la plupart des utilisateurs, cela sera dans <em>C:\Program Files\stunnel</em> ou <em>C:\Program Files (x86)\stunnel</em>.</li>
+<li>Faites glisser et déposez le fichier <code>stunnel.conf</code> téléchargé dans ce répertoire.</li>
+<li>Double-cliquez sur <em>stunnel.exe</em> dans le répertoire d'installation pour lancer le service.</li>
+</ol>
+
+<p>Maintenant, vous êtes prêt à installer OpenVPN et à le configurer pour acheminer son trafic via Stunnel. Un profil .ovpn personnalisé préconfiguré pour fonctionner à côté du fichier <code>stunnel.conf</code> rendra cela facile.</p>
+
+<h4>Installation OpenVPN</h4>
+
+<ol>
+<li>Téléchargez et exécutez <a href="/mirror/index-fr.html#openvpn">l'installateur Windows</a> OpenVPN.</li>
+<li>Cliquez sur <em>Suivant</em> et acceptez le contrat de licence en sélectionnant <em>J'accepte</em>.</li>
+<li>Cliquez <em>Suivant</em> sur l'écran <em>Choose Components</em> (Choisir les composants). Laissez toutes les options par défaut cochée.</li>
+<li>Notez le dossier de destination. C'est là que vous placerez le profil de configuration client <code>52.15.254.140-direct.ovpn</code> après l'installation. Cliquez sur <em>Install</em> (Installer).</li>
+<li>Un avis de sécurité Windows apparaîtra et demande <em>Voulez-vous installer ce logiciel de périphérique?</em>. Cliquer <em>Installer</em>.</li>
+<li>Cliquez <em>Next</em> sur l'écran <em>Installation Complete</em> (installation complète).</li>
+<li>Décochez <em>Show Readme</em> puis cliquez <em>Finish</em> (finir).</li>
+<li>Cliquez-droit sur l'icône OpenVPN GUI et choisissez <em>Propriétés</em>.</li>
+<li>Allez à l'onglet <em>Compatibilité</em> et cliquez sur la coche <em>Exécuter ce programme en tant qu'administrateur</em> dans la section <em>Niveau du privilège</em>.</li>
+<li>Double-cliquez sur l'icône OpenVPN GUI situé sur votre bureau afin de lancer l'application.</li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés:
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-stunnel.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-stunnel.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-stunnel.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-stunnel.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-stunnel.ovpn">rely-inherit</a></li>
+</ul></li>
+<li>Ouvrez le directoire <em>config</em> situé dans le dossier de destination. Pour la plupart des utilisateurs, ça sera <em>C:\Programmes\OpenVPN\config</em> ou <em>C:\Program Files (x86)\OpenVPN\config</em>. Vous verrez un seul fichier README dans ce répertoire.</li>
+<li>Faites glisser et déposez le <code>52.15.254.140-stunnel.ovpn</code> téléchargé a cette location juste à côté du fichier README.</li>
+<li>Faites un clic droit sur l'icône OpenVPN dans la barre des tâches et choisissez <em>Connecter</em>.</li>
+<li>Vous verrez des journaux se déplacent à mesure que la connexion est établie, suivie d'une notification de la barre des tâches indiquant votre adresse IP attribuée.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="macos"></a></p>
+
+<h3>macOS</h3>
+
+<h4>Installation Stunnel</h4>
+
+<ol>
+<li>Installer <a href="https://brew.sh/">Homebrew</a>, si vous ne l'avez pas.</li>
+<li><p>Installer stunnel utilisant Homebrew:</p>
+
+<p><code>brew install stunnel</code></p>
+
+<ul>
+<li>Si l'installation de Homebrew n'est pas une option, vous pouvez également télécharger et compiler le <a href="/mirror/index-fr.html#stunnel">code source stunnel</a>.</li>
+</ul></li>
+<li>Téléchargez le fichier <code>stunnel.conf</code> qui a été personnalisé pour fonctionner avec ce serveur:
+<ul>
+<li><a href="/openvpn/stunnel.conf">stunnel.conf</a></li>
+</ul></li>
+<li><p>Remplacez le fichier défaut stunnel.conf avec la version personnalisée. Assurez-vous de mettre à jour l'emplacement de la source si vous avez téléchargé le fichier dans un répertoire différent.</p>
+
+<p><code>cp ~/Downloads/stunnel.conf /usr/local/etc/stunnel/</code></p></li>
+<li><p>Lancez stunnel:</p>
+
+<p><code>stunnel</code></p></li>
+</ol>
+
+<p>Maintenant, vous êtes prêt à installer OpenVPN et à le configurer pour acheminer son trafic via Stunnel. Un profil .ovpn personnalisé préconfiguré pour fonctionner à côté du fichier <code>stunnel.conf</code> rendra cela facile.</p>
+
+<h4>Installation OpenVPN</h4>
+
+<ol>
+<li>Téléchargez et lancez <a href="/mirror/index-fr.html#openvpn">Tunnelblick</a>.</li>
+<li>Saisissez votre mot de passe pour permettre le processus d'installation de finir, en suite cliquez <em>OK</em>.</li>
+<li>Cliquez <em>Lancer</em> une fois l'installation est terminée.</li>
+<li>Cliquez <em>J'ai des fichiers de configuration</em>.</li>
+<li>Téléchargez l'un des profils unifiés d'OpenVPN:
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-stunnel.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-stunnel.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-stunnel.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-stunnel.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-stunnel.ovpn">rely-inherit</a></li>
+</ul></li>
+<li>Double-cliquez le profile OpenVPN.</li>
+<li>Vous devrez choisir si le profil doit être disponible pour tous les utilisateurs ou seulement pour l'utilisateur actuel. Après avoir effectué votre sélection, vous devrez entrer votre mot de passe.</li>
+<li>Recherchez l'icône Tunnelblick dans votre barre de menus. Cliquez dessus et choisissez <em>Connecter</em>.</li>
+<li>Succès! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux"></a></p>
+
+<h3>Linux</h3>
+
+<h4>Installation Stunnel</h4>
+
+<ol>
+<li><p>Assurez-vous que stunnel est installé:</p>
+
+<p><code>sudo apt-get install stunnel</code> où <code>sudo yum install stunnel</code> où <code>gestionnaire-de-paquetage-esoterique hipster stunnel</code></p>
+
+<ul>
+<li>Si l'installation de stunnel via votre gestionnaire de paquets n'est pas une option, vous pouvez également télécharger et compiler le <a href="/mirror/index-fr.html#stunnel">code source stunnel</a>..</li>
+</ul></li>
+<li>Téléchargez le fichier <code>stunnel.conf</code> qui a été personnalisé pour fonctionner avec ce serveur:
+<ul>
+<li><a href="/openvpn/stunnel.conf">stunnel.conf</a></li>
+</ul></li>
+<li><p>Copiez <code>stunnel.conf</code> vers la bonne destination. Assurez-vous de mettre à jour l'emplacement de la source si vous avez déplacé le répertoire ailleurs.</p>
+
+<p><code>cp ~/Downloads/stunnel.conf /etc/stunnel/</code></p></li>
+<li>Les utilisateurs d'Ubuntu doivent ajuster le fichier <code>/etc/default/stunnel4</code> et assurez-vous que <code>ENABLED</code> est défini sur <code>1</code>.</li>
+<li><p>Redémarrez le service Stunnel:</p>
+
+<p><code>sudo service stunnel4 restart</code> ou <code>sudo service stunnel restart</code></p></li>
+</ol>
+
+<p>Maintenant, vous êtes prêt à installer OpenVPN et à le configurer pour acheminer son trafic via Stunnel. Un profil .ovpn personnalisé préconfiguré pour fonctionner à côté du fichier <code>stunnel.conf</code> rendra cela facile.</p>
+
+<h4>Installation OpenVPN</h4>
+
+<ol>
+<li><p>Installer OpenVPN :</p>
+
+<p><code>sudo apt-get install openvpn</code> où <code>sudo yum install openvpn</code> où <code>gestionnaire-de-paquetage-esoterique hipster openvpn</code></p>
+
+<ul>
+<li>Si l'installation de OpenVPN via votre gestionnaire de paquetage n'est pas une option, vous pouvez également télécharger et compiler le <a href="/mirror/index-fr.html#openvpn">code source OpenVPN</a>.</li>
+</ul></li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-stunnel.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-stunnel.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-stunnel.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-stunnel.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-stunnel.ovpn">rely-inherit</a></li>
+</ul></li>
+<li>Copiez le fichier <code>52.15.254.140-direct.ovpn</code> téléchargé vers l'emplacement de votre choix. <em>/etc/openvpn/</em> est une bonne option.</li>
+<li><p>Sur certaines distributions, l'option DNS DHCP poussée du serveur OpenVPN sera ignorée. Cela signifie que vos requêtes DNS seront toujours acheminées via les serveurs de votre FAI qui les rend vulnérables à ce que l'on appelle une fuite DNS.</p>
+
+<ul>
+<li>Vous pouvez tester si votre DNS ou non est en train de fuir <a href="https://dnsleaktest.com/">içi</a>.</li>
+<li>Vous pouvez vous assurer que les serveurs DNS corrects sont utilisés en ajoutant les lignes suivantes au début du fichier <code>52.15.254.140-stunnel.ovpn</code>:
+<ul>
+<li><code>script-security 2</code></li>
+<li><code>up /etc/openvpn/update-resolv-conf</code></li>
+<li><code>down /etc/openvpn/update-resolv-conf</code></li>
+</ul></li>
+</ul></li>
+<li><p>Exécutez OpenVPN et passez le profil .ovpn en option.</p>
+
+<p><code>sudo openvpn 52.15.254.140-stunnel.ovpn</code></p></li>
+<li><p>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</p></li>
+</ol>
+
+<p>Le plugin OpenVPN pour NetworkManager semble devenir très confus à la manière dont il doit acheminer le trafic lorsque vous vous connectez à un serveur OpenVPN via une connexion stunnel. L'ajout manuelle d'informations sur l'itinéraire ne semble pas aider. Par conséquent, contrairement aux <a href="/openvpn/index-fr.html">instructions non stunnel</a>, les étapes ci-dessus sont également la méthode de connexion recommandée pour Ubuntu.</p>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<h4>Installation SSLDroid</h4>
+
+<ol>
+<li>Téléchargez la clé PKCS #12 stunnel
+<ul>
+<li><a href="/openvpn/stunnel.p12">stunnel.p12</a></li>
+</ul></li>
+<li>Copiez le fichier <code>stunnel.p12</code> sur votre téléphone.</li>
+<li>Installez <a href="https://play.google.com/store/apps/details?id=hu.blint.ssldroid&amp;hl=fr">SSLDroid</a> et lancez-le.</li>
+<li>Appuyez sur le bouton de menu.</li>
+<li>Tapez <em>Add tunnel</em>.</li>
+<li>Tapez <em>Tunnel name</em> et saisissez <code>streisand-demo-site</code>.</li>
+<li>Tapez <em>Local port</em> et saisissez <code>41194</code>.</li>
+<li>Tapez <em>Remote host</em> et saisissez <code>52.15.254.140</code>.</li>
+<li>Tapez <em>Remote port</em> et saisissez <code>993</code>.</li>
+<li>Appuyez sur le bouton 'browse' (Parcourir) à côté du fichier <em>PKCS12</em> et sélectionnez le fichier <code>stunnel.p12</code> que vous avez copié sur votre téléphone durant la première étape. Vous pouvez laisser le champ <em>PKCS12 pass</em> vide.</li>
+<li>Tapez <em>Apply</em>.</li>
+</ol>
+
+<p>Maintenant, vous êtes prêt à installer OpenVPN pour Android et à le configurer pour acheminer son trafic via SSLDroid, qui est connecté au port Stunnel sur le serveur distant. Un profil .ovpn personnalisé qui est préconfiguré pour fonctionner avec SSLDroid rendra cela facile.</p>
+
+<h3>Installation OpenVPN</h3>
+
+<ol>
+<li>Installez <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=fr">OpenVPN pour Android</a>.</li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-stunnel.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-stunnel.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-stunnel.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-stunnel.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-stunnel.ovpn">rely-inherit</a></li>
+</ul></li>
+<li>Copiez le fichier <code>52.15.254.140-stunnel.ovpn</code> sur votre téléphone.</li>
+<li>Lancez OpenVPN pour Android.</li>
+<li>Appuyez sur l'icône du dossier en bas à droite de l'écran.</li>
+<li>Sélectionnez le profil <code>52.15.254.140-stunnel.ovpn</code> que vous avez copié sur votre téléphone.</li>
+<li>Tapez sur l'icône de sauvegarde (disquette) en bas à droite de l'écran une fois l'importation est terminée.</li>
+<li>Tapez le profil.</li>
+<li>Acceptez l'avertissement de connexion VPN Android.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="ios"></a></p>
+
+<h2>iOS</h2>
+
+<p>Il n'y a pas d'applications de tunneling compatibles dans l'App Store en ce moment.</p>
+</body>
+</html>

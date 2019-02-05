@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="index-fr.html">Français</a>&nbsp;
+  <a href="index.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>Shadowsocks</h2>
+
+<hr />
+
+<ul>
+<li>Platforms
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS</a></li>
+</ul></li>
+<li>Plugins
+<ul>
+<li><a href="#simple-obfs">simple-obfs</a></li>
+</ul></li>
+</ul>
+
+<p><a name="windows"></a></p>
+
+<h3>Windows</h3>
+
+<ol>
+<li>Download <a href="/mirror/shadowsocks/">Shadowsocks for Windows</a>.</li>
+<li>Extract the archive, and double-click on the Shadowsocks.exe file.</li>
+<li><p>Make sure the QR code below is centered and completely visible, right-click on the Shadowsocks system tray icon, and go to <em>Servers</em> > <em>Scan QRCode from Screen...</em></p>
+
+<p><img src="/shadowsocks/shadowsocks-qr-code.png" alt="Shadowsocks QR code" title="" /></p></li>
+<li>You may also go to <em>Servers</em> > <em>New server</em> and manually complete the following steps:
+<ol>
+<li>Enter <code>52.15.254.140</code> as the <em>Server IP</em>.</li>
+<li>Enter <code>8530</code> as the <em>Server Port</em>.</li>
+<li>Enter <code>kIHCO+d+WwlYhQGPRC2AVsvxP+qaJJxVYQ/6nVv1ecfcAa3UlZwftnswTFqwx2Pz</code> as the <em>Password</em>.</li>
+<li>The <em>SOCKS 5 Proxy Port</em> should be <code>1080</code> and the <em>Encryption Method</em> should be <code>chacha20-ietf-poly1305</code>.</li>
+<li>Click <em>Save</em>.</li>
+</ol></li>
+<li>Click on the Shadowsocks menu tray icon and select <em>Enable</em>.</li>
+<li>That's it! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="macos"></a></p>
+
+<h3>macOS</h3>
+
+<ol>
+<li>Download <a href="/mirror/shadowsocks/">ShadowsocksX-NG</a>.</li>
+<li>Double-click the ZIP, and extract the application into your Applications folder.</li>
+<li>Launch ShadowsocksX-NG. You will be prompted to enter your password so that your system proxy settings can be modified.</li>
+<li>Look for the Shadowsocks paper plane icon in your menu bar and click on it.</li>
+<li><p>Make sure the QR code below is centered and completely visible, and choose <em>Scan QR Code from Screen...</em></p>
+
+<p><img src="/shadowsocks/shadowsocks-qr-code.png" alt="Shadowsocks QR code" title="" /></p></li>
+<li>You may also configure the connection by going to <em>Servers</em>, selecting <em>Open Server Preferences...</em>, and clicking the <em>+</em> button on the sidebar:
+<ol>
+<li>Enter <code>52.15.254.140</code> and <code>8530</code> in the <em>Address</em> fields.</li>
+<li>Make sure <code>chacha20-ietf-poly1305</code> is selected for the <em>Encryption</em> value.</li>
+<li>Enter <code>kIHCO+d+WwlYhQGPRC2AVsvxP+qaJJxVYQ/6nVv1ecfcAa3UlZwftnswTFqwx2Pz</code> as the <em>Password</em>.</li>
+<li>Click <em>OK</em>.</li>
+</ol></li>
+<li>Click on the Shadowsocks icon in the menu bar again, and choose <em>Global Mode</em>.</li>
+<li>You can use the Shadowsocks icon to enable/disable the VPN. The color of the icon will change based on whether or not it is active.</li>
+<li>That's it! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux"></a></p>
+
+<h3>Linux</h3>
+
+<p>Download <a href="/mirror/shadowsocks/">shadowsocks2-linux-x64.gz</a> and extract it:</p>
+
+<pre><code>`gunzip shadowsocks2-linux-x64.gz`
+</code></pre>
+
+<p>Make the binary executable:</p>
+
+<pre><code>`chmod +x shadowsocks2-linux-x64`
+</code></pre>
+
+<p>Start the shadowsocks SOCKS proxy:</p>
+
+<pre><code>`./shadowsocks2-linux-x64 -c 52.15.254.140:8530 -password "kIHCO+d+WwlYhQGPRC2AVsvxP+qaJJxVYQ/6nVv1ecfcAa3UlZwftnswTFqwx2Pz" -socks localhost:1080 -verbose -cipher chacha20-ietf-poly1305`
+</code></pre>
+
+<p>For reference, this is the configuration specified:</p>
+
+<pre><code>    Server: 52.15.254.140
+    Port: 8530
+    Password: kIHCO+d+WwlYhQGPRC2AVsvxP+qaJJxVYQ/6nVv1ecfcAa3UlZwftnswTFqwx2Pz
+    Encryption Method: chacha20-ietf-poly1305
+</code></pre>
+
+<p>Once you have Shadowsocks running locally, you'll need to forward your browser traffic through the SOCKS proxy it provides</p>
+
+<h3>Testing with Curl</h3>
+
+<p>You can quickly test using curl:</p>
+
+<pre><code> `curl -I --socks5 localhost:1080 google.com`
+</code></pre>
+
+<p>This should return a 301 Found response <strong>not</strong> a connection refused error.</p>
+
+<h4>Configuring Firefox to connect through a SOCKS proxy</h4>
+
+<ol>
+<li>Click the <em>Menu</em> button next to the <em>Home</em> icon to the right of the address bar.</li>
+<li>Click <em>Options</em>.</li>
+<li>Click the <em>Advanced</em> icon.</li>
+<li>Go to the <em>Network</em> tab.</li>
+<li>Click the <em>Settings</em> button to <em>Configure how Firefox connects to the Internet</em>.</li>
+<li>Choose <em>Manual proxy configuration</em>.</li>
+<li>Enter <code>127.0.0.1</code> and Port <code>1080</code> on the <em>SOCKS Host</em> line.</li>
+<li>Select <em>Remote DNS</em>. This configures Firefox to send all DNS requests through the SOCKS proxy. This will protect you against DNS poisoning and ensure that false DNS entries cannot be used to censor your access.</li>
+<li>Click <em>OK</em>.</li>
+<li>Click <em>OK</em> again to close the Firefox preferences window.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<ol>
+<li>Download Shadowsocks for Android from <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">Google Play</a>. If Google Play is blocked in your country, you can <a href="/mirror/shadowsocks/">download a mirrored copy</a> from this server!</li>
+<li>Launch the application.</li>
+<li>Tap the Add Profile <em>+</em> icon, second from the top-right of the screen.</li>
+<li>Select <em>Scan QR code</em>.</li>
+<li><p>Use your phone to scan this image, or if you are using your phone <em>right now</em> you can choose the <em>Manual Settings</em> option and copy and paste the information from the Linux section above:</p>
+
+<p><img src="/shadowsocks/shadowsocks-qr-code.png" alt="Shadowsocks QR code" title="" /></p></li>
+<li>Tap the round paper plane icon along the bottom-left bar.</li>
+<li>Accept the Android VPN connection warning.</li>
+<li>You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="ios"></a></p>
+
+<h3>iOS</h3>
+
+<ol>
+<li>Download <a href="https://itunes.apple.com/us/app/shadowrocket/id932747118?mt=8">Shadowrocket</a> and launch it.
+<blockquote>
+  <p><strong>Note:</strong> Shadowrocket is not available in the China App Store.</li>
+<li>Tap the QR code import icon in the top-left of the screen.</li>
+<li><p>Use your phone to scan this image, or if you are using your phone <em>right now</em> you can manually add a new proxy by tapping <em>Add Server</em> and using the information from the Linux section above:</p></p>
+</blockquote>
+
+<p><img src="/shadowsocks/shadowsocks-qr-code.png" alt="Shadowsocks QR code" title="" /></p></li>
+<li>Toggle the connection switch located to the right of the <em>Not Connected</em> text on the <em>Home</em> tab.
+<ul>
+<li>If this is your first time running Shadowrocket, iOS will ask you to verify that the application should have permission to add VPN configurations. Tap <em>Allow</em> and follow the instructions.</li>
+</ul></li>
+<li>You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="simple-obfs"></a></p>
+
+<h3>simple-obfs for unreliable/hostile networks</h3>
+
+<p>For users on unreliable or hostile networks (esp. experiencing quality-of-service (QOS) throttling) using the simple-obfs plugin may help alleviate these issues. Further configuration of the Shadowsocks client to use the simple-obfs plugin can be carried out via the following configuration:</p>
+
+<pre><code>    Server: 52.15.254.140
+    Port: 8530
+    Password: kIHCO+d+WwlYhQGPRC2AVsvxP+qaJJxVYQ/6nVv1ecfcAa3UlZwftnswTFqwx2Pz
+    Encryption Method: chacha20-ietf-poly1305
+    Plugin: obfs-local
+    Plugin_Options: obfs=http;obfs-host=www.github.com
+</code></pre>
+
+<p>Android users will first need to download the <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks.plugin.obfs_local&amp;hl=en">Simple Obfuscation</a> plugin app, and then modify the existing Streisand profile on your client to use this plugin. You can do this by hitting the edit button next to the profile, tapping the <code>Plugin</code> option at the bottom of the profile and selecting the "Simple obsfucation" plugin from the menu. Your Shadowsocks traffic will now be obfuscated as <code>http</code> traffic to <code>www.github.com</code>.</p>
+</body>
+</html>

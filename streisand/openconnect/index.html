@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="index-fr.html">Français</a>&nbsp;
+  <a href="index.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>OpenConnect / Cisco AnyConnect</h2>
+
+<p>OpenConnect is an extremely high-performance and lightweight VPN server that also features full compatibility with the official Cisco AnyConnect clients. The <a href="http://www.infradead.org/ocserv/technical.html">protocol</a> is built on top of standards like HTTP, TLS, and DTLS, and it's one of the most popular and widely used VPN technologies. Due to its use among large multi-national corporations, it often means that at the protocol level, it is seldom targetted for censorship.</p>
+
+<hr />
+
+<ul>
+<li>Platforms
+<ul>
+<li><a href="#clientcerts">Certificates</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#macos-openconnect-gui">OpenConnect GUI</a></li>
+<li><a href="#macos-openconnect-cli">OpenConnect CLI</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS</a></li>
+</ul></li>
+</ul>
+
+<p><a name="clientcerts"></a></p>
+
+<h3>Server and client Certificates (macOS, Android)</h3>
+
+<p>Client certificates are a mechanism by which clients can authenticate themselves securely with the server.</p>
+
+<ol>
+<li>Your OpenConnect server issues its own <strong>server certificate</strong>. This is used by your device's client software (such as AnyConnect for iOS) to securely identify the VPN server. Download this server's certificate.
+<ul>
+<li><a href="/openconnect/ca.crt">ca.crt</a></li>
+</ul></li>
+<li>Each device you wish to configure needs a <strong>client certificate</strong> in addition to the server certificate above. A client certificate is used to securely identify and authenticate your device to the VPN server. Two devices can't use the same client certificate and be logged in at the same time (one client certificate per device). Each client certificate is protected by a password, which will be needed to unlock it once you import it into your device.
+<ul>
+<li><a href="/openconnect/brother-various.p12">brother-various.p12</a>, password: <code>where.actress.lazy</code> </li>
+<li><a href="/openconnect/shallow-exotic.p12">shallow-exotic.p12</a>, password: <code>task.federal.fetch</code> </li>
+<li><a href="/openconnect/uncle-task.p12">uncle-task.p12</a>, password: <code>worth.attitude.decline</code> </li>
+<li><a href="/openconnect/script-pizza.p12">script-pizza.p12</a>, password: <code>board.peasant.orchard</code> </li>
+<li><a href="/openconnect/rely-inherit.p12">rely-inherit.p12</a>, password: <code>clown.have.tip</code> </li>
+</ul></li>
+</ol>
+
+<p><a name="windows"></a></p>
+
+<h3>Windows</h3>
+
+<ol>
+<li>Download the <a href="/mirror/#openconnect">OpenConnect GUI installer</a>.</li>
+<li>Run the OpenConnect GUI installer.</li>
+<li>Complete the TAP-Windows Setup Wizard.
+<ul>
+<li>Choose the default options, and allow the TAP driver from the OpenVPN project to be installed.</li>
+</ul></li>
+<li>Launch the OpenConnect application.</li>
+<li>Click the <em>Edit</em> icon (gear) and select 'New profile advanced'.</li>
+<li>Enter <code>streisand-demo-site</code> for the <em>Name</em>.</li>
+<li>Enter <code>52.15.254.140:4443</code> for the <em>Gateway</em>.</li>
+<li>Enter <code>streisand</code> for the <em>Username</em> and click <em>Save</em>.</li>
+<li>Click <em>Connect</em>.</li>
+<li>A prompt will appear during the initial connection asking you to trust the server's certificate. Click <em>The information is accurate</em> and the server will be automatically verified for all future connections.</li>
+<li>Enter <code>snake.endorse.fame.mystery.prefer</code> for the <em>Password</em> and click <em>OK</em>.</li>
+<li>Click <em>No</em> when the Windows prompt appears asking <em>Do you want to allow your PC to be discoverable...</em>.</li>
+<li>The current beta version of the OpenConnect GUI <a href="https://github.com/openconnect/openconnect-gui/issues/48">does not support automatically changing the DNS settings</a>. In order to avoid DNS leaks, the following steps must be performed:
+<ol>
+<li>Right-click on the Windows Start Button.</li>
+<li>Click <em>Network Connections</em>.</li>
+<li>Right-click on the device that you are using to connect (Ethernet or Wi-Fi) and click <em>Properties</em>.</li>
+<li>Double-click <em>Internet Protocol Version 4 (TCP/IPv4)</em>.</li>
+<li>Select <em>Use the following DNS server addresses</em> and enter:
+<ul>
+<li><code>8.8.8.8</code></li>
+<li><code>8.8.4.4</code></li>
+</ul></li>
+<li>Click <em>OK</em>.</li>
+<li>Click <em>OK</em> to close the connection properties.</li>
+</ol></li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="macos"></a></p>
+
+<h3>macOS</h3>
+
+<p><a name="macos-openconnect-gui"></a></p>
+
+<h4>OpenConnect GUI</h4>
+
+<ol>
+<li>Download the <a href="/mirror/#openconnect">OpenConnect GUI installer</a>.</li>
+<li>Run the OpenConnect GUI installer.</li>
+<li>Launch the OpenConnect application.</li>
+<li>Click the <em>Edit</em> icon (gear) and select 'New profile advanced'.</li>
+<li>Enter <code>streisand-demo-site</code> for the <em>Name</em>.</li>
+<li>Enter <code>52.15.254.140:4443</code> for the <em>Gateway</em>.</li>
+<li>Enter <code>streisand</code> for the <em>Username</em> and click <em>Save</em>.</li>
+<li>Click <em>Connect</em>.</li>
+<li>A prompt will appear during the initial connection asking you to trust the server's certificate. Click <em>The information is accurate</em> and the server will be automatically verified for all future connections.</li>
+<li>Enter <code>snake.endorse.fame.mystery.prefer</code> for the <em>Password</em> and click <em>OK</em>.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="macos-openconnect-cli"></a></p>
+
+<h4>OpenConnect CLI</h4>
+
+<ol>
+<li>Install <a href="https://brew.sh/">Homebrew</a>, if you haven't already.</li>
+<li><p>Install OpenConnect using Homebrew:</p>
+
+<p><code>brew install openconnect</code></p>
+
+<ul>
+<li>If installing Homebrew is not an option, you can also download and compile the <a href="/mirror/#openconnect">OpenConnect source code</a>.</li>
+</ul></li>
+<li>Download the <a href="/openconnect/ca.crt">server certificate</a> file, and a <a href="#clientcerts">client certificate file</a> from the list above.</li>
+<li>Place the downloaded server certificate and a selected client certificate into a separate folder (e.g. <code>streisand-demo-site-openconnect</code>), open your Terminal, and <code>cd</code> to that directory.</li>
+<li><p>Run OpenConnect:</p>
+
+<p><code>sudo openconnect --cafile ca.crt --certificate your-client-certificate.p12 --key-password 'your-client-certificate-password' --pfs 52.15.254.140:4443</code></p></li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux"></a></p>
+
+<h3>Linux</h3>
+
+<ol>
+<li><p>Install the OpenConnect plugin for NetworkManager.</p>
+
+<p><code>sudo apt-get install network-manager-openconnect-gnome</code></p></li>
+<li>Download the server certificate file:
+<ul>
+<li><a href="/openconnect/ca.crt">ca.crt</a></li>
+</ul></li>
+<li>Open your <em>System Settings</em>.</li>
+<li>Click the <em>Network</em> icon.</li>
+<li>Click the <em>+</em> button in the lower-left of the window.</li>
+<li>Select <em>VPN</em> from the Interface drop-down and click <em>Create</em>.</li>
+<li>Select <em>Cisco AnyConnect Compatible VPN (openconnect)</em> and click <em>Create</em>.</li>
+<li>Enter <code>streisand-demo-site</code> for the <em>Connection name</em>.</li>
+<li>Enter <code>52.15.254.140:4443</code> for the <em>Gateway</em>.</li>
+<li>Select the <code>ca.crt</code> file that you just downloaded for the <em>CA Certificate</em>.</li>
+<li>Click <em>Save</em>.</li>
+<li>Select the VPN in the left-hand menu, and flip the switch to <em>ON</em>. You can also enable/disable the VPN by clicking on the WiFi/Network icon in the menu bar, scrolling to <em>VPN Connections</em>, and clicking on its name.</li>
+<li>Enter <code>streisand</code> for the <em>Username</em> and click <em>Login</em>.</li>
+<li>Enter <code>snake.endorse.fame.mystery.prefer</code> for the <em>Password</em>, check <em>Save passwords</em>, and click <em>Login</em>.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<ol>
+<li>Download <a href="https://play.google.com/store/apps/details?id=com.cisco.anyconnect.vpn.android.avf">Cisco AnyConnect</a> from Google Play.</li>
+<li>Launch the application.</li>
+<li>Tap <em>OK</em> to accept the "Supplemental End User License Agreement for AnyConnect&reg; Secure Mobility Client vx.x and other VPN-related Software".</li>
+<li>Tap the menu icon and select <em>Settings</em>.</li>
+<li>Uncheck the <em>Block Untrusted Servers</em> option.
+<ul>
+<li>The server certificate will be imported during the initial login and automatically verified for all future connections.</li>
+</ul></li>
+<li>Tap the back button.</li>
+<li>Tap <em>Connection</em> and then tap <em>Add New VPN Connection...</em>.</li>
+<li>Tap <em>Description</em> and enter <code>streisand-demo-site</code>.</li>
+<li>Tap <em>Server Address</em> and enter <code>52.15.254.140:4443</code>.</li>
+<li>Tap <em>Advanced Preferences</em>.</li>
+<li>Tap <em>Certificate</em>.
+<ul>
+<li>Each profile can be downloaded on the device itself using the <a href="#clientcerts">links above</a>, or copied from your computer via USB.</li>
+</ul></li>
+<li>Check the <code>Download</code> folder if you downloaded the file directly to the device. This is where Chrome places its files, for example.</li>
+<li>Tap <em>Import</em>, tap <em>File System</em>, and select a <a href="#clientcerts">client certificate file</a> from the list above that you transferred.</li>
+<li>Enter your client certificate password when the <em>Password</em> prompt is displayed, and tap <em>Connect</em>.</li>
+<li>You'll see a checkmark next to the newly imported certificate. Tap the back button.</li>
+<li>Tap <em>Done</em> twice to save the connection.</li>
+<li>Tap the back button to return to the main screen. You should see <code>streisand-demo-site</code> in the <em>Connection</em> section.</li>
+<li>Slide the <em>AnyConnect VPN</em> switch On.</li>
+<li>Tap <em>Details</em> when the Security Warning is displayed.</li>
+<li>Tap <em>Import and Continue</em> when the Certificate Summary is displayed.</li>
+<li>Tap <em>Connect</em> on the group selection screen. The correct default has already been chosen.</li>
+<li>If this is your first time using AnyConnect, you will need to accept the Connection Request dialog that Android displays.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<h4>Prompted for username?</h4>
+
+<p>Some users <a href="https://github.com/StreisandEffect/streisand/issues/847">have reported</a> that their Android AnyConnect clients prompt for a username and password. This is a known bug we don't understand. See the list of <a href="https://github.com/StreisandEffect/streisand/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20anyconnect">Streisand AnyConnect open issues</a>. If you're affected, you could help us understand the bug by reporting your details using the issue list's <em>New issue</em> button's template. Fixes are gratefully accepted too.</p>
+
+<p>If you're affected, you can use this workaround:</p>
+
+<ol>
+<li>When prompted for a user, enter <code>streisand</code></li>
+<li>When prompted for a password, use <code>snake.endorse.fame.mystery.prefer</code></li>
+</ol>
+
+<p><a name="ios"></a></p>
+
+<h3>iOS</h3>
+
+<h4>Note: When using AnyConnect for the first time, you may be prompted for a password prior to being connected. Enter <code>streisand</code> for the username, <code>snake.endorse.fame.mystery.prefer</code> for the password and continue. Subsequent connections will not prompt you again.</h4>
+
+<h4>Note: Only one AnyConnect profile can be configured at any give time. To remove an existing profile, go to <em>Settings</em> -> <em>General</em> -> <em>Profile</em>, tap on the profile you wish to remove, then tap on <em>Remove Profile</em>.</h4>
+
+<ol>
+<li>Transfer a .mobileconfig file for each device you wish to configure:
+<ul>
+<li><a href="/openconnect/brother-various.mobileconfig">brother-various.mobileconfig</a></li>
+<li><a href="/openconnect/shallow-exotic.mobileconfig">shallow-exotic.mobileconfig</a></li>
+<li><a href="/openconnect/uncle-task.mobileconfig">uncle-task.mobileconfig</a></li>
+<li><a href="/openconnect/script-pizza.mobileconfig">script-pizza.mobileconfig</a></li>
+<li><a href="/openconnect/rely-inherit.mobileconfig">rely-inherit.mobileconfig</a></li>
+<li>The profile can be emailed to your device (simply tap the attachment), transferred via the <a href="https://itunes.apple.com/us/app/apple-configurator/id434433123?mt=12">Apple Configurator</a> utility, or downloaded directly by viewing these instructions on the device itself.</li>
+</ul></li>
+<li>Follow the on-screen instructions.</li>
+<li><p>You will be prompted to enter your device password or pin.</p></li>
+<li><p>Download <a href="https://itunes.apple.com/us/app/cisco-anyconnect/id1135064690">Cisco AnyConnect</a> from the App Store.</p></li>
+<li>Launch the application.</li>
+<li>Tap <em>OK</em> to enable the software when the dialog box appears.</li>
+<li>Tap <em>Settings</em>.</li>
+<li>Turn off the <em>Block Untrusted Servers</em> switch.
+<ul>
+<li>The server certificate will be imported during the initial login and automatically verified for all future connections.</li>
+</ul></li>
+<li>Tap <em>Home</em>.</li>
+<li>Slide the <em>AnyConnect VPN</em> switch on.</li>
+<li>Tap <em>Details</em> when the Security Warning is displayed.</li>
+<li>Tap <em>Import</em> in the top-right corner.</li>
+<li>Tap <em>Connect</em> on the group selection screen. The correct default has already been chosen.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+</body>
+</html>

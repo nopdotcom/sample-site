@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="index-fr.html">Français</a>&nbsp;
+  <a href="index.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>OpenVPN</h2>
+
+<p>Si les connexions OpenVPN sont bloquées dans votre pays, reportez-vous aux instructions <a href="/openvpn/stunnel-fr.html">OpenVPN (stunnel)</a> qui vous aideront à envelopper votre trafic OpenVPN dans un tunnel crypté afin qu'il ressemble à du trafic TLS standard.</p>
+
+<h4>Une note sur les fichiers clients</h4>
+
+<p>Pour des raisons de sécurité, ce serveur OpenVPN a été configuré pour n'autoriser qu'une seule connexion client par paire de certificats. Toute tentative de ré-utiliser les certificats clients entraînera une session client existante de se déconnecter.</p>
+
+<hr />
+
+<ul>
+<li>Plateformes
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#linux-ubuntu-16.04">Linux (Ubuntu 16.04)</a></li>
+<li><a href="#linux-ubuntu-17.10">Linux (Ubuntu 17.10)</a></li>
+<li><a href="#linux-ubuntu-18.04">Linux (Ubuntu 18.04)</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS</a></li>
+</ul></li>
+</ul>
+
+<p><a name="windows"></a></p>
+
+<h3>Windows</h3>
+
+<ol>
+<li>Téléchargez et exécutez <a href="/mirror/index-fr.html#openvpn">l'installateur Windows</a> OpenVPN.</li>
+<li>Cliquez sur <em>Suivant</em> et acceptez le contrat de licence en sélectionnant <em>J'accepte</em>.</li>
+<li>Cliquez <em>Suivant</em> sur l'écran <em>Choose Components</em> (Choisir les composants). Laissez toutes les options par défaut cochées.</li>
+<li>Notez le dossier de destination. C'est là que vous placerez le profil de configuration client <code>52.15.254.140-direct.ovpn</code> après l'installation. Cliquez sur <em>Install</em> (Installer).</li>
+<li>Un avis de sécurité Windows apparaîtra et demande <em>Voulez-vous installer ce logiciel de périphérique?</em>. Cliquer <em>Installer</em>.</li>
+<li>Cliquez <em>Next</em> sur l'écran <em>Installation Complete</em> (installation complète).</li>
+<li>Décochez <em>Show Readme</em> puis cliquez <em>Finish</em> (finir).</li>
+<li>Cliquez-droit sur l'icône OpenVPN GUI et choisissez <em>Propriétés</em>.</li>
+<li>Allez à l'onglet <em>Compatibilité</em> et cochez la case <em>Exécuter ce programme en tant qu'administrateur</em> dans la section <em>Niveau du privilège</em>.</li>
+<li>Double-cliquez sur l'icône OpenVPN GUI situé sur votre bureau afin de lancer l'application.</li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><em><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui ne permet l'accès au port <code>443</code>.</em></li>
+<li><em><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><em><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.</em></li>
+</ul></li>
+<li>Ouvrez le répertoire <em>config</em> situé dans le dossier de destination. Pour la plupart des utilisateurs, ça sera <em>C:\Programmes\OpenVPN\config</em> ou <em>C:\Program Files (x86)\OpenVPN\config</em>. Vous verrez un seul fichier README dans ce répertoire.</li>
+<li>Faites glisser et déposez le <code>52.15.254.140-direct.ovpn</code> téléchargé a ci-dessus, et placez-le dans le même répertoire que le fichier README.</li>
+<li>Faites un clic droit sur l'icône OpenVPN dans la barre des tâches et choisissez <em>Connecter</em>.</li>
+<li>Vous verrez des journaux se déplacent à mesure que la connexion est établie, suivie d'une notification de la barre des tâches indiquant votre adresse IP attribuée.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="macos"></a></p>
+
+<h3>macOS</h3>
+
+<ol>
+<li>Téléchargez et lancez <a href="/mirror/index-fr.html#openvpn">Tunnelblick</a>.</li>
+<li>Saisissez votre mot de passe pour permettre le processus d'installation de finir, et cliquez ensuite sur <em>OK</em>.</li>
+<li>Cliquez <em>Lancer</em> une fois l'installation terminée.</li>
+<li>Cliquez <em>J'ai des fichiers de configuration</em>.</li>
+<li>Téléchargez l'un des profils unifiés d'OpenVPN:
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><em><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui ne permet l'accès au port <code>443</code>.</em></li>
+<li><em><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><em><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.</em></li>
+</ul></li>
+<li>Double-cliquez le profil OpenVPN.</li>
+<li>Vous devrez choisir si le profil doit être disponible pour tous les utilisateurs ou seulement pour l'utilisateur actuel. Après avoir effectué votre sélection, vous devrez entrer votre mot de passe.</li>
+<li>Recherchez l'icône Tunnelblick dans votre barre de menus. Cliquez dessus et choisissez <em>Connecter</em>.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux"></a></p>
+
+<h3>Linux</h3>
+
+<ol>
+<li><p>Installer OpenVPN:</p>
+
+<p><code>sudo apt-get install openvpn</code> où <code>sudo yum install openvpn</code> où <code>gestionnaire-de-paquetage-esoterique hipster openvpn</code></p>
+
+<ul>
+<li>Si l'installation de OpenVPN via votre gestionnaire de paquet n'est pas une option, vous pouvez également télécharger et compiler le <a href="/mirror/index-fr.html#openvpn">code source OpenVPN</a>.</li>
+</ul></li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><em><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui permet uniquement l'accès au port <code>443</code>.</em></li>
+<li><em><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><em><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.</em></li>
+</ul></li>
+<li>Copiez le fichier <code>52.15.254.140-direct.ovpn</code> téléchargé vers l'emplacement de votre choix. <em>/etc/openvpn/</em> est une bonne option.</li>
+<li>Sur certaines distributions, l'option DNS DHCP poussée du serveur OpenVPN sera ignorée. Cela signifie que vos requêtes DNS seront toujours acheminées via les serveurs de votre FAI qui les rend vulnérables à ce que l'on appelle une fuite DNS.
+<ul>
+<li>Vous pouvez tester si votre DNS ou non est en train de fuir <a href="https://dnsleaktest.com/">ici</a>.</li>
+<li>Vous pouvez vous assurer que les serveurs DNS corrects sont utilisés en ajoutant les lignes suivantes au début du fichier <code>52.15.254.140-direct.ovpn</code>:
+<ul>
+<li><code>script-security 2</code></li>
+<li><code>up /etc/openvpn/update-resolv-conf</code></li>
+<li><code>down /etc/openvpn/update-resolv-conf</code></li>
+</ul></li>
+</ul></li>
+<li><p>Exécutez OpenVPN et passez le profil .ovpn en option.</p>
+
+<p><code>sudo openvpn 52.15.254.140-direct.ovpn</code></p></li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux-ubuntu-16.04"></a></p>
+
+<h3>Linux (Ubuntu 16.04)</h3>
+
+<p>En raison d'un problème lié à NetworkManager d'Ubuntu 16.04, vous ne pouvez pas utiliser le plug-in OpenVPN. De plus, vous ne pouvez pas utiliser la version de OpenVPN qui est dans les dépôts par défaut. Pour résoudre ce problème, nous devons télécharger OpenVPN directement depuis le dépôt de projets.</p>
+
+<ol>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui permet uniquement l'accès au port <code>443</code>.<em></li>
+<li><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.*</li>
+</ul></li>
+<li>Copiez le fichier téléchargé 52.15.254.140-direct.ovpn `à l'emplacement de votre choix. <em>/etc/openvpn/</em> est une bonne option.</li>
+<li><p>Ajouter le dépôt APT OpenVPN à vos sources en exécutant les commandes suivantes :</p>
+
+<p><code>curl -s https://swupdate.openvpn.net/repos/repo-public.gpg | apt-key add</code>
+<code>echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" &gt; /etc/apt/sources.list.d/openvpn-aptrepo.list</code></p></li>
+<li><p>Mettre à jour et installez OpenVPN avec la commande suivante :</p>
+
+<p><code>sudo apt update &amp;&amp; sudo apt install openvpn</code></p></li>
+<li><p>Une fois l'installation terminée, vérifiez que vous disposez de la version OpenVPN 2.4+ avec la commande suivante :</p>
+
+<p><code>openvpn --version</code></p></li>
+<li>Dans certaines distributions, l'option DNS DHCP poussée du serveur OpenVPN sera ignorée. Cela signifie que vos requêtes DNS seront toujours acheminés par les serveurs de votre fournisseur de services Internet qui les rend vulnérables à ce qu'on appelle une fuite DNS.
+<ul>
+<li>Vous pouvez tester si votre DNS fuit ou non <a href="https://dnsleaktest.com/">ici</a>.</li>
+<li>Vous pouvez vous assurer que les serveurs DNS corrects sont utilisés en ajoutant les lignes suivantes au début du fichier <code>52.15.254.140-direct.ovpn</code> :
+<ul>
+<li><code>script-security 2</code></li>
+<li><code>up /etc/openvpn/update-resolv-conf</code></li>
+<li><code>down /etc/openvpn/update-resolv-conf</code></li>
+</ul></li>
+</ul></li>
+<li><p>Exécutez OpenVPN et transmettez-lui le profil .ovpn en option.</p>
+
+<p><code>sudo openvpn 52.15.254.140-direct.ovpn</code></p></li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux-ubuntu-17.10"></a></p>
+
+<h3>Linux (Ubuntu)</h3>
+
+<p>Il est préférable de configurer Ubuntu en utilisant le plugin OpenVPN pour NetworkManager. Cela vous donne une jolie petite interface pour la connexion, et il gère correctement les modifications DNS nécessaires lors de la connexion / déconnexion. Malheureusement, le plugin ne prend pas en charge les profils .ovpn, les étapes sont donc un peu plus compliquée.</p>
+
+<ol>
+<li>Premièrement, téléchargez le certificat CA d'OpenVPN, le certificat client <code>.crt</code>, la clé privée du client <code>.key</code>, et finalement la clé d'authentification TLS <code>ta.key</code> pour l'un ces profils en dessous:
+<ul>
+<li>brother-various
+<ul>
+<li>CA Cert: <a href="/openvpn/brother-various/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/brother-various/client.crt">brother-various.crt</a></li>
+<li>Client Clé: <a href="/openvpn/brother-various/client.key">brother-various.key</a></li>
+<li>TA Clé: <a href="/openvpn/brother-various/ta.key">ta.key</a></li>
+</ul></li>
+<li>shallow-exotic
+<ul>
+<li>CA Cert: <a href="/openvpn/shallow-exotic/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/shallow-exotic/client.crt">shallow-exotic.crt</a></li>
+<li>Client Clé: <a href="/openvpn/shallow-exotic/client.key">shallow-exotic.key</a></li>
+<li>TA Clé: <a href="/openvpn/shallow-exotic/ta.key">ta.key</a></li>
+</ul></li>
+<li>uncle-task
+<ul>
+<li>CA Cert: <a href="/openvpn/uncle-task/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/uncle-task/client.crt">uncle-task.crt</a></li>
+<li>Client Clé: <a href="/openvpn/uncle-task/client.key">uncle-task.key</a></li>
+<li>TA Clé: <a href="/openvpn/uncle-task/ta.key">ta.key</a></li>
+</ul></li>
+<li>script-pizza
+<ul>
+<li>CA Cert: <a href="/openvpn/script-pizza/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/script-pizza/client.crt">script-pizza.crt</a></li>
+<li>Client Clé: <a href="/openvpn/script-pizza/client.key">script-pizza.key</a></li>
+<li>TA Clé: <a href="/openvpn/script-pizza/ta.key">ta.key</a></li>
+</ul></li>
+<li>rely-inherit
+<ul>
+<li>CA Cert: <a href="/openvpn/rely-inherit/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/rely-inherit/client.crt">rely-inherit.crt</a></li>
+<li>Client Clé: <a href="/openvpn/rely-inherit/client.key">rely-inherit.key</a></li>
+<li>TA Clé: <a href="/openvpn/rely-inherit/ta.key">ta.key</a></li>
+</ul></li>
+</ul></li>
+<li><p>Installez le plugin OpenVPN pour NetworkManager.</p>
+
+<p><code>sudo apt-get install network-manager-openvpn-gnome</code></p></li>
+<li>Ouvrez votre <em>Paramètres système</em>.</li>
+<li>Cliquez sur l'icône <em>Réseau</em>.</li>
+<li>Cliquez sur le bouton <em>+</em> en bas à gauche de la fenêtre.</li>
+<li>Sélectionnez <em>VPN</em> dans la liste déroulante Interface et cliquez sur <em>Créer</em>.</li>
+<li>Sélectionnez <em>OpenVPN</em> et cliquez <em>Créer</em>.</li>
+<li>Saisissez <code>streisand-demo-site</code> pour la <em>Nom de la connexion</em>.</li>
+<li>Saisissez <code>52.15.254.140</code> pour le <em>Gateway</em>.</li>
+<li>Assurez-vous que <em>Certificates (TLS)</em> est sélectionné pour le <em>Type</em>.</li>
+<li>Sélectionnez le fichier <code>client.crt</code> de votre choix pour le <em>User Certificate</em>.</li>
+<li>Sélectionnez le fichier <code>ca.crt</code> pour le <em>CA Certificate</em>.</li>
+<li>Sélectionnez le ficher <code>client.key</code> pour le <em>Private Key</em>.</li>
+<li>Cliquez le bouton <em>Advanced</em>.</li>
+<li>Accédez à l'onglet <em>General</em>.
+<ul>
+<li>Vérifier <em>Use custom gateway port</em> et entrer <code>636</code> comme sa valeur.
+<ul>
+<li>Port <code>443</code> est disponible en alternative si vous êtes sur un réseau qui ne permet l'accès au le port HTTPS standard.</li>
+<li>Vous pouvez également utiliser le port <code>8757</code> pour une connexion UDP.</li>
+<li>Le profil combiné qui parcourt le port UDP <code>8757</code>, le port TCP <code>636</code>et <code>443</code> est également disponible.</li>
+</ul></li>
+<li>Cochez <em>Use a TCP connection</em> sauf si vous avez choisi d'utiliser le port UDP ou le profil combiné.</li>
+</ul></li>
+<li>Accédez à l'onglet <em>Security</em>.
+<ul>
+<li>Sélectionnez <code>AES-256-CBC</code> pour le <em>Cipher</em>.</li>
+<li>Sélectionnez <code>SHA256</code> pour le <em>HMAC Authentication</em>.</li>
+</ul></li>
+<li>Accédez à l'onglet <em>TLS Authentication</em>.
+<ul>
+<li>Dans le menu déroulant <em>Server Certificate Check</em> selectionnez <code>verify name exactly</code> et saisissez <code>smooth-bonus-maple</code> pour sa valeur.</li>
+<li>Cochez <em>Verify peer (server) certificate usage signature</em>.</li>
+<li>Cochez <em>Additional TLS authentication or encryption</em>.
+<ul>
+<li>Sélectionnez <code>TLS-Crypt</code> pour <em>Mode</em>.</li>
+<li>Sélectionnez le fichier <code>ta.key</code> que vous avez téléchargé depuis le répertoire client-files pour le <em>Key File</em>.</li>
+</ul></li>
+<li>Cliquez <em>Valider</em>.</li>
+</ul></li>
+<li>Cliquez <em>Enregistrer</em></li>
+<li>Sélectionnez le VPN dans le menu à gauche, et faites glisser l'interrupteur sur <em>ON</em>. Vous pouvez également activer/désactiver le VPN en cliquant sur l'icône WiFi/Réseau dans la barre de menu, défiler vers <em>Connexions VPN</em> et en cliquant sur son nom.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux-ubuntu-18.04"></a></p>
+
+<h3>Linux (Ubuntu)</h3>
+
+<p>Il est préférable de configurer Ubuntu en utilisant le plugin OpenVPN pour NetworkManager. Cela vous donne une jolie petite interface pour la connexion, et il gère correctement les modifications DNS nécessaires lors de la connexion / déconnexion. Malheureusement, le plugin ne prend pas en charge les profils .ovpn, les étapes sont donc un peu plus compliquée.</p>
+
+<ol>
+<li>Premièrement, téléchargez le certificat CA d'OpenVPN, le certificat client <code>.crt</code>, la clé privée du client <code>.key</code>, et finalement la clé d'authentification TLS <code>ta.key</code> pour l'un ces profils en dessous:
+<ul>
+<li>brother-various
+<ul>
+<li>CA Cert: <a href="/openvpn/brother-various/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/brother-various/client.crt">brother-various.crt</a></li>
+<li>Client Clé: <a href="/openvpn/brother-various/client.key">brother-various.key</a></li>
+<li>TA Clé: <a href="/openvpn/brother-various/ta.key">ta.key</a></li>
+</ul></li>
+<li>shallow-exotic
+<ul>
+<li>CA Cert: <a href="/openvpn/shallow-exotic/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/shallow-exotic/client.crt">shallow-exotic.crt</a></li>
+<li>Client Clé: <a href="/openvpn/shallow-exotic/client.key">shallow-exotic.key</a></li>
+<li>TA Clé: <a href="/openvpn/shallow-exotic/ta.key">ta.key</a></li>
+</ul></li>
+<li>uncle-task
+<ul>
+<li>CA Cert: <a href="/openvpn/uncle-task/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/uncle-task/client.crt">uncle-task.crt</a></li>
+<li>Client Clé: <a href="/openvpn/uncle-task/client.key">uncle-task.key</a></li>
+<li>TA Clé: <a href="/openvpn/uncle-task/ta.key">ta.key</a></li>
+</ul></li>
+<li>script-pizza
+<ul>
+<li>CA Cert: <a href="/openvpn/script-pizza/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/script-pizza/client.crt">script-pizza.crt</a></li>
+<li>Client Clé: <a href="/openvpn/script-pizza/client.key">script-pizza.key</a></li>
+<li>TA Clé: <a href="/openvpn/script-pizza/ta.key">ta.key</a></li>
+</ul></li>
+<li>rely-inherit
+<ul>
+<li>CA Cert: <a href="/openvpn/rely-inherit/ca.crt">ca.crt</a></li>
+<li>Client Cert: <a href="/openvpn/rely-inherit/client.crt">rely-inherit.crt</a></li>
+<li>Client Clé: <a href="/openvpn/rely-inherit/client.key">rely-inherit.key</a></li>
+<li>TA Clé: <a href="/openvpn/rely-inherit/ta.key">ta.key</a></li>
+</ul></li>
+</ul></li>
+<li><p>Installez le plugin OpenVPN pour NetworkManager.</p>
+
+<p><code>sudo apt-get install network-manager-openvpn-gnome</code></p></li>
+<li>Ouvrez votre <em>Paramètres système</em>.</li>
+<li>Cliquez sur l'icône <em>Réseau</em>.</li>
+<li>Cliquez sur le bouton <em>+</em> en bas à gauche de la fenêtre.</li>
+<li>Sélectionnez <em>VPN</em> dans la liste déroulante Interface et cliquez sur <em>Créer</em>.</li>
+<li>Sélectionnez <em>OpenVPN</em> et cliquez <em>Créer</em>.</li>
+<li>Saisissez <code>streisand-demo-site</code> pour la <em>Nom de la connexion</em>.</li>
+<li>Saisissez <code>52.15.254.140</code> pour le <em>Gateway</em>.</li>
+<li>Assurez-vous que <em>Certificates (TLS)</em> est sélectionné pour le <em>Type</em>.</li>
+<li>Sélectionnez le fichier <code>client.crt</code> de votre choix pour le <em>User Certificate</em>.</li>
+<li>Sélectionnez le fichier <code>ca.crt</code> pour le <em>CA Certificate</em>.</li>
+<li>Sélectionnez le ficher <code>client.key</code> pour le <em>Private Key</em>.</li>
+<li>Cliquez le bouton <em>Advanced</em>.</li>
+<li>Accédez à l'onglet <em>General</em>.
+<ul>
+<li>Vérifier <em>Use custom gateway port</em> et entrer <code>636</code> comme sa valeur.
+<ul>
+<li>Port <code>443</code> est disponible en alternative si vous êtes sur un réseau qui ne permet l'accès au le port HTTPS standard.</li>
+<li>Vous pouvez également utiliser le port <code>8757</code> pour une connexion UDP.</li>
+<li>Le profil combiné qui parcourt le port UDP <code>8757</code>, le port TCP <code>636</code>et <code>443</code> est également disponible.</li>
+</ul></li>
+<li>Cochez <em>Use a TCP connection</em> sauf si vous avez choisi d'utiliser le port UDP ou le profil combiné.</li>
+</ul></li>
+<li>Accédez à l'onglet <em>Security</em>.
+<ul>
+<li>Sélectionnez <code>AES-256-CBC</code> pour le <em>Cipher</em>.</li>
+<li>Sélectionnez <code>SHA256</code> pour le <em>HMAC Authentication</em>.</li>
+</ul></li>
+<li>Accédez à l'onglet <em>TLS Authentication</em>.
+<ul>
+<li>Dans le menu déroulant <em>Server Certificate Check</em> selectionnez <code>verify name exactly</code> et saisissez <code>smooth-bonus-maple</code> pour sa valeur.</li>
+<li>Cochez <em>Verify peer (server) certificate usage signature</em>.</li>
+<li>Cochez <em>Additional TLS authentication or encryption</em>.
+<ul>
+<li>Sélectionnez <code>TLS-Crypt</code> pour <em>Mode</em>.</li>
+<li>Sélectionnez le fichier <code>ta.key</code> que vous avez téléchargé depuis le répertoire client-files pour le <em>Key File</em>.</li>
+</ul></li>
+<li>Cliquez <em>Valider</em>.</li>
+</ul></li>
+<li>Cliquez <em>Enregistrer</em></li>
+<li>Sélectionnez le VPN dans le menu à gauche, et faites glisser l'interrupteur sur <em>ON</em>. Vous pouvez également activer/désactiver le VPN en cliquant sur l'icône WiFi/Réseau dans la barre de menu, défiler vers <em>Connexions VPN</em> et en cliquant sur son nom.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<ol>
+<li>Installez <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=fr">OpenVPN pour Android</a>.</li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés :
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><em><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui permet uniquement l'accès au port <code>443</code>.</em></li>
+<li><em><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><em><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.</em></li>
+</ul></li>
+<li>Copiez le fichier <code>52.15.254.140-direct.ovpn</code> sur votre téléphone.</li>
+<li>Lancez OpenVPN pour Android.</li>
+<li>Appuyez sur l'icône du dossier en bas à droite de l'écran.</li>
+<li>Sélectionnez le profil <code>52.15.254.140-direct.ovpn</code> que vous avez copié sur votre téléphone.</li>
+<li>Tapez sur l'icône de sauvegarde (disquette) en bas à droite de l'écran une fois l'importation est terminée.</li>
+<li>Tapez le profil.</li>
+<li>Acceptez l'avertissement de connexion VPN Android.</li>
+<li>Succès ! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="ios"></a></p>
+
+<h3>iOS</h3>
+
+<ol>
+<li>Téléchargez <a href="https://itunes.apple.com/fr/app/openvpn-connect/id590379981">OpenVPN Connect</a> et lancez-le.</li>
+<li>Téléchargez l'un de ces profils OpenVPN unifiés:
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct.ovpn">rely-inherit</a></li>
+<li><em><a href="#sslh-profiles">Profils alternatifs</a> sont disponibles si vous êtes sur un réseau qui permet uniquement l'accès au port <code>443</code>.</em></li>
+<li><em><a href="#udp-profiles">Profils UDP</a> sont disponibles.</em></li>
+<li><em><a href="#combined-profiles">Profils combinés</a> sont maintenant disponibles.</em></li>
+</ul></li>
+<li>Ouvrez iTunes sur votre ordinateur et connectez votre téléphone.</li>
+<li>Sélectionnez votre téléphone, cliquez sur l'onglet <em>Apps</em> et trouvez OpenVPN dans la section <em>Partage de fichiers</em>.</li>
+<li>Faites glisser et déposez le fichier <code>52.15.254.140-direct.ovpn</code> téléchargé dans la fenêtre de partage de fichiers.</li>
+<li>OpenVPN sur votre téléphone va vous dire <em>1 new OpenVPN profile is available for import</em>.</li>
+<li>Appuyez sur le bouton vert <em>+</em> pour importer le profil.</li>
+<li>Tapez sur le l'interrupteur pour vous connecter au serveur OpenVPN.</li>
+<li>Succès! Vous pouvez vérifier que votre trafic est correctement routé par <a href="https://duckduckgo.com/?q=ip+address">recherche de votre adresse IP sur DuckDuckGo</a>. Il devrait dire <em>Votre adresse IP publique est 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="sslh-profiles"></a></p>
+
+<h3>Profils alternatifs unifiés pour l'accès via le port 443</h3>
+
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-sslh.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-sslh.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-sslh.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-sslh.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-sslh.ovpn">rely-inherit</a></li>
+</ul>
+
+<p><a name="udp-profiles"></a></p>
+
+<h3>Profils alternatifs unifiés pour accéder via le port UDP 8757</h3>
+
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-direct-udp.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-direct-udp.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-direct-udp.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-direct-udp.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-direct-udp.ovpn">rely-inherit</a></li>
+</ul>
+
+<p><a name="combined-profiles"></a></p>
+
+<h3>Profil alternatif qui parcourra le port UDP 8757, le port TCP 636, et le port TCP 443</h3>
+
+<ul>
+<li><a href="/openvpn/brother-various/52.15.254.140-combined.ovpn">brother-various</a></li>
+<li><a href="/openvpn/shallow-exotic/52.15.254.140-combined.ovpn">shallow-exotic</a></li>
+<li><a href="/openvpn/uncle-task/52.15.254.140-combined.ovpn">uncle-task</a></li>
+<li><a href="/openvpn/script-pizza/52.15.254.140-combined.ovpn">script-pizza</a></li>
+<li><a href="/openvpn/rely-inherit/52.15.254.140-combined.ovpn">rely-inherit</a></li>
+</ul>
+</body>
+</html>

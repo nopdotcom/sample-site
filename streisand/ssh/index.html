@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="index-fr.html">Français</a>&nbsp;
+  <a href="index.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>SSH Tunnel</h2>
+
+<hr />
+
+<ul>
+<li>Platforms
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux-and-macos">Linux and macOS</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#notes">Notes</a></li>
+</ul></li>
+</ul>
+
+<p><a name="windows"></a></p>
+
+<h3>Windows</h3>
+
+<ol>
+<li>Download <a href="/mirror/ssh/">PuTTY</a> and run it.</li>
+<li>Go to the <em>Session</em> section.</li>
+<li>Enter <code>52.15.254.140</code> in the Host Name field.</li>
+<li>Enter <code>443</code> in the Port field.
+<ul>
+<li>Port 22 is available as an option if your network does not block it.</li>
+</ul></li>
+<li>Go to Connection --> Data.</li>
+<li>Enter <code>forward</code> in the <em>Auto-login username</em> field.</li>
+<li>Go to Connection --> SSH.</li>
+<li>Check <code>Don't start a shell or command at all</code>.</li>
+<li>Go to Connection --> SSH --> Tunnels.</li>
+<li>Enter <code>8080</code> in the <em>Source port</em> field.</li>
+<li>Make sure the <code>Auto</code> and <code>Dynamic</code> radio buttons are selected.</li>
+<li>Click <em>Add</em> to add the tunnel. You should see <code>D8080</code> in the Forwarded ports box.</li>
+<li>Go to Connection --> SSH --> Auth.</li>
+<li>Download the <code>streisand_rsa.ppk</code> private key that is used to authenticate the SSH connection. Right-click; Save target as...
+<ul>
+<li><a href="/ssh/streisand_rsa.ppk">streisand_rsa.ppk</a></li>
+</ul></li>
+<li>Click the <em>Browse</em> button.</li>
+<li>Click the <em>PuTTY Private Key Files</em> drop down next to the <em>File name</em> field and choose <em>All Files</em>.</li>
+<li>Select the downloaded <code>streisand_rsa.ppk</code> file and click <em>Open</em>.</li>
+<li>Go back to <em>Session</em> (the very first item in the left-hand menu).</li>
+<li>Enter <code>streisand-demo-site</code> in the first <em>Saved Sessions</em> box and click the <em>Save</em> button. The next time you launch PuTTY you can choose the session and click <em>Load</em> to restore all of these settings.</li>
+<li><p>Click <em>Open</em> to connect! PuTTY will ask you to confirm the fingerprint. Make sure it matches one of these:</p>
+
+<p><code>256 SHA256:igrtubz6enzjI2EQDkULG+dpkxaGdQC/i2wP94y1sFI root@ip-172-31-24-104 (ECDSA)</code></p>
+
+<p><code>3072 SHA256:j2RDpoT/SAkahHXN9aNRORbyhzWub6zNDJ75XF1cha0 root@ip-172-31-24-104 (RSA)</code></p></li>
+</ol>
+
+<p>You are now connected and have a SOCKS proxy up and running that is ready to forward encrypted traffic through SSH. The next step is to configure your web browser to use it.</p>
+
+<h4>Configuring Firefox to connect through a SOCKS proxy</h4>
+
+<ol>
+<li>Click the <em>Menu</em> button next to the <em>Home</em> icon to the right of the address bar.</li>
+<li>Click <em>Options</em>.</li>
+<li>Click the <em>Advanced</em> icon.</li>
+<li>Go to the <em>Network</em> tab.</li>
+<li>Click the <em>Settings</em> button to <em>Configure how Firefox connects to the Internet</em>.</li>
+<li>Choose <em>Manual proxy configuration</em>.</li>
+<li>Enter <code>127.0.0.1</code> and Port <code>8080</code> on the <em>SOCKS Host</em> line.</li>
+<li>Select <em>Remote DNS</em>. This configures Firefox to send all DNS requests through the SOCKS proxy. This will protect you against DNS poisoning and ensure that false DNS entries cannot be used to censor your access.</li>
+<li>Click <em>OK</em>.</li>
+<li>Click <em>OK</em> again to close the Firefox preferences window.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<p><a name="linux-and-macos"></a></p>
+
+<h3>Linux and macOS</h3>
+
+<h4>SSH Forwarding</h4>
+
+<ol>
+<li>Download the <code>streisand_rsa</code> private key that is used to authenticate the SSH connection:
+<ul>
+<li><a href="/ssh/streisand_rsa">streisand_rsa</a></li>
+</ul></li>
+<li>Copy the <code>streisand_rsa</code> file to the directory of your choice.</li>
+<li>Set the correct permissions on the RSA key file:
+<ul>
+<li><code>chmod 600 streisand_rsa</code></li>
+</ul></li>
+<li><p>Add a new entry to your <code>.ssh/config</code> file. It should look like this. Port 22 is available if your network does not block it. Be sure to adjust the location of the IdentityFile:</p>
+
+<pre><code> Host streisand-demo-site
+   User           forward
+   Port           443
+   HostName       52.15.254.140
+   IdentitiesOnly yes
+   IdentityFile   ~/.ssh/streisand_rsa
+</code></pre></li>
+<li><p>SSH into the server and forward a dynamic SOCKS port:</p>
+
+<p><code>ssh -vND 8080 forward@streisand-demo-site</code></p></li>
+<li><p>Verify that the fingerprint matches one of these:</p>
+
+<p><code>256 SHA256:igrtubz6enzjI2EQDkULG+dpkxaGdQC/i2wP94y1sFI root@ip-172-31-24-104 (ECDSA)</code></p>
+
+<p><code>3072 SHA256:j2RDpoT/SAkahHXN9aNRORbyhzWub6zNDJ75XF1cha0 root@ip-172-31-24-104 (RSA)</code></p></li>
+<li>You are now connected and have a SOCKS proxy up and running that is ready to forward encrypted traffic through SSH. The next step is to configure your web browser to use it. You can follow the same instructions contained in the Windows section above to configure Firefox to route its traffic through the SOCKS proxy.</li>
+</ol>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<ol>
+<li>Install <a href="https://play.google.com/store/apps/details?id=org.ayal.SPT">SSH persistent tunnels</a> by Shai Ayal. This application makes it easy to forward multiple ports through an SSH tunnel, and it does a decent job of ensuring that the tunnels remain active even when you switch back and forth regularly between LTE, 3G, and WiFi. The app is <a href="https://code.google.com/p/ssh-persistent-tunnel/">open source</a> and can be compiled for free, but the Play Store version costs $1.50.</li>
+<li>Download the <code>streisand_rsa</code> private key that is used to authenticate the SSH connection:
+<ul>
+<li><a href="/ssh/streisand_rsa">streisand_rsa</a></li>
+</ul></li>
+<li>Copy the <code>streisand_rsa</code> file to the root directory of your phone.</li>
+<li>Start the application. It will be listed as <em>SPT</em> in your launcher, and its icon looks like a train tunnel.</li>
+<li>Tap the menu icon in the lower-right of your screen.</li>
+<li>Tap <em>Settings</em>.</li>
+<li>Tap <em>Host name</em> and enter <code>52.15.254.140</code>.</li>
+<li>Tap <em>User Name</em> and enter <code>forward</code>.</li>
+<li>Tap <em>Port</em> and enter <code>443</code>.
+<ul>
+<li>Port 22 is available if your network does not block it.</li>
+</ul></li>
+<li>Tap <em>Private Key File</em> and select the <code>streisand_rsa</code> file that you copied to your phone.</li>
+<li>Tap <em>Dynamic Forward Port</em> and enter <code>1080</code>.</li>
+<li>Tap <em>Forwards</em> and enter <code>L8888=localhost:8888</code>.</li>
+<li>Go back and tap the <em>Connect Tunnel</em> button.</li>
+<li><p>Verify that the fingerprint matches one of these:</p>
+
+<p><code>256 SHA256:igrtubz6enzjI2EQDkULG+dpkxaGdQC/i2wP94y1sFI root@ip-172-31-24-104 (ECDSA)</code></p>
+
+<p><code>3072 SHA256:j2RDpoT/SAkahHXN9aNRORbyhzWub6zNDJ75XF1cha0 root@ip-172-31-24-104 (RSA)</code></p></li>
+</ol>
+
+<p>You are now ready to configure your applications to route their traffic through the SSH tunnel provided by SPT.</p>
+
+<h4>Configuring Android to route most of its traffic through SPT</h4>
+
+<p>These steps will only work when you are connected via WiFi. They also must be applied individually to every WiFi network you connect to. Most applications will respect these settings, including the default browser, Chrome, YouTube, and many more.</p>
+
+<ol>
+<li>Open your phone's Settings.</li>
+<li>Tap <em>Wi-Fi</em> in the <em>Wireless &amp; Networks</em> section.</li>
+<li>Long-press on the WiFi network you are currently connected to. A pop-up menu will appear.</li>
+<li>Tap <em>Modify network</em>.</li>
+<li>Tap <em>Show advanced options</em>.</li>
+<li>Select <em>Manual</em> in the Proxy section.</li>
+<li>Tap <em>Proxy hostname</em> and enter <code>127.0.0.1</code>.</li>
+<li>Tap <em>Proxy port</em> and enter <code>8888</code>.</li>
+<li>Tap <em>Save</em>.</li>
+</ol>
+
+<p>Some applications allow you to make these settings persistent for all networks. Twitter for Android and Firefox for Android can route their traffic through the SPT SSH tunnel regardless of your current connection (WiFi, 3G, HSPA+, LTE, etc.).</p>
+
+<h4>Configuring Twitter for Android to use SPT</h4>
+
+<ol>
+<li>Open Twitter.</li>
+<li>Tap the three dots in the upper-right of the screen to open the menu.</li>
+<li>Choose <em>Settings</em>.</li>
+<li>Tap <em>General</em>.</li>
+<li>Tap <em>Proxy</em>.</li>
+<li>Check the <em>Enable HTTP Proxy</em> checkbox.</li>
+<li>Tap <em>Proxy Host</em> and enter <code>127.0.0.1</code>.</li>
+<li>Tap <em>Proxy Port</em> and enter <code>8888</code>.</li>
+</ol>
+
+<h4>Configuring Firefox for Android to use SPT</h4>
+
+<ol>
+<li>Open Firefox.</li>
+<li>Type <code>about:config</code> into the address bar and tap the 'Go' button on your keyboard.</li>
+<li>Type <code>proxy</code> into the search box.</li>
+<li>Set the value of <em>network.proxy.socks</em> to <code>127.0.0.1</code>.</li>
+<li>Set the value of <em>network.proxy.socks_port</em> to <code>1080</code>.</li>
+<li>Set the value of <em>network.proxy.socks_remote_dns</em> to <code>true</code>.</li>
+<li>Set the value of <em>network.proxy.type</em> to <code>1</code>.</li>
+</ol>
+
+<p><a name="notes"></a>
+1. If you see the message "This account is for port forwarding only", make sure you configure your SSH client to not execute shell commands on remote server (<code>-N</code>).</p>
+</body>
+</html>

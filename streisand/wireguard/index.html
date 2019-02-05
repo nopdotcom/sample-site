@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEUAAABYWFhra2tCQkK4uLj09PT///+NjY3p6enR0dHFxcUmJiacnJzd3d2qqqp9fX2xNhOVAAAAl0lEQVR42t2RUQ7EIAhEK6KCYvf+t12Jrdlkxx6g80XgGZjxeKMCUdxPI6c8lHjDlLxU0Jx8IqrZRQCo18vGo6gAGG2dVRp3YEDaPMbMANCdsODlowlh2yVxLpcaMEH1JhIdWO1z9km0h8ANZ1lU79VO/Pr86xIE4rqt+a3AB/vqbsbiRpGDnpcEZ2VypcBbk8H/iY736QuY2AVel91hIQAAAABJRU5ErkJggg==" rel="icon" />
+    <title>STREISAND</title>
+
+    <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+    }
+
+    body {
+      margin: 1em auto;
+      padding: 1em;
+      line-height: 1.6875;
+      max-width: 44em;
+      font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', serif;
+      font-size: 16px;
+      background: #fff;
+      color:#333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 3.157em;
+
+    }
+
+    h2 {
+      margin-top: 2em;
+      font-size:1.777em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: 1.333em;
+    }
+
+    h4 {
+      font-size:1em;
+    }
+
+    h5 {
+      font-size:0.9em;
+    }
+
+    h6 {
+      font-size:0.8em;
+    }
+
+    h5 + p,
+    h5 + pre {
+      margin-top: 0.25em;
+    }
+
+    ul,
+    ol {
+      margin: 1em 0 2em;
+      padding: 0 0 0 2em;
+    }
+
+    li + li {
+      margin-top: 0.5em;
+    }
+
+    ul + h3,
+    ol + h3 {
+      margin-top: 2em;
+    }
+
+    /*p em:only-child {
+      font-size: 1.333em;
+    }*/
+
+    /*p.lead {
+      margin-top: -0.25em;
+    }*/
+
+    li p:last-child {
+      margin:0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      color: #333;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: white;
+      border-bottom-color: black;
+      background-color: black;
+      padding: 0 0.5em;
+      margin: 0 -0.5em -2px -0.5em;
+    }
+
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+
+    ::-moz-selection,
+    a::-moz-selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    ::selection,
+    a::selection {
+      background: rgba(0,0,0,0.1);
+      color: black;
+    }
+
+    img {
+      max-width:100%;
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      color:#666666;
+      margin:0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+      display: none;
+    }
+
+    pre,
+    code { 
+      color: #000; 
+      font-family: Consolas, monaco, monospace;
+      font-size: 0.88em; 
+      background-color: #e6e6e6;
+    }
+
+    code {
+      padding: 4px 6px 0;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 4px 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0.5em 0 !important;
+      padding: 0.1em 0.5em !important;
+      -webkit-font-smoothing: auto !important;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 1px;
+      border: 0;
+    }
+
+    .logo:hover {
+      border: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .logo:hover hr {
+      display: inline-block;
+      position: absolute;
+      height: 30%;
+      left: 0.4em;
+      right: 0.4em;
+      top: 9%;
+      border: 0;
+      background-color: black;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    hr + ul {
+      background-color: #f6f6f6;
+      padding: 1em 2em;
+      margin-top: 1.5em;
+      list-style-type: none;
+    }
+
+    hr + ul a {
+      text-decoration: none;
+    }
+
+    hr + ul li + li {
+      margin-top: 0.25em;
+    }
+
+    hr + ul ul {
+      margin-top: 0.25em;
+      margin-bottom: 1em;
+    }
+
+    a[download] {
+      border: 2px solid #333;
+      color: #333;
+      display: inline-block;
+      padding: 14px 18px;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      text-align: center;
+      margin: 1em 0;
+      text-transform: uppercase;
+    }
+
+    a[download]:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a[download] img {
+      vertical-align: top;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    @media (max-width: 479px) {
+      a[download] {
+        display: block;
+      }
+    }
+
+    </style>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.getAttribute('href') === '#download') {
+          e.preventDefault(); document.getElementById('download').click();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href='/' class='logo'>Streisand<hr/></a>
+<hr />
+
+<p><a href="index-fr.html">Français</a>&nbsp;
+  <a href="index.html">English</a>&nbsp;</p>
+
+<hr />
+
+<h2>WireGuard</h2>
+
+<p><a href="https://www.wireguard.com/">WireGuard</a> is almost certainly the best connection option that Streisand provides. This is due to its <a href="https://www.wireguard.com/performance/">incredible performance</a>, <a href="https://www.wireguard.com/protocol/">class-leading cryptography</a>, and many, many other benefits.</p>
+
+<p>WireGuard is available on Linux, and <a href="https://www.wireguard.com/xplatform/">cross-platform</a> and portable userspace implementations can be downloaded for Android and macOS.</p>
+
+<p>An <a href="#openwrt">experimental configuration for OpenWrt/LEDE</a> 17.01.4 (or later) is also available.</p>
+
+<hr />
+
+<ul>
+<li>Platforms
+<ul>
+<li><a href="#android">Android</a></li>
+<li><a href="#ios">iOS</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#openwrt">OpenWrt</a></li>
+</ul></li>
+</ul>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<ol>
+<li><a href="https://play.google.com/store/apps/details?id=com.wireguard.android">Install WireGuard</a>.</li>
+<li>Launch the app and tap the blue button to add a new tunnel.</li>
+<li>Tap <em>Create from QR code</em> and grant the app permission to access the camera. A viewfinder will appear.</li>
+<li>Use the camera to scan one of these client configuration QR codes. <strong>Only one device can use a profile at a time</strong>:
+<ul>
+<li><a href="/wireguard/brother-various.png">brother-various</a></li>
+<li><a href="/wireguard/shallow-exotic.png">shallow-exotic</a></li>
+<li><a href="/wireguard/uncle-task.png">uncle-task</a></li>
+<li><a href="/wireguard/script-pizza.png">script-pizza</a></li>
+<li><a href="/wireguard/rely-inherit.png">rely-inherit</a></li>
+</ul></li>
+<li>Enter a name for the tunnel and tap <em>Create Tunnel</em> to save the configuration.</li>
+<li>Tap the switch next to the tunnel's name to enable the VPN. If this is your first time using WireGuard on your Android device, you will be prompted to accept the VPN connection request.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<hr />
+
+<p><a name="ios"></a></p>
+
+<h3>iOS</h3>
+
+<ol>
+<li>Install WireGuard (by WireGuard Development Team) from the App Store.</li>
+<li>Launch the app and tap the blue button to add a new tunnel.</li>
+<li>Tap <em>Create from QR code</em> and grant the app permission to access the camera. A viewfinder will appear.</li>
+<li>Use the camera to scan one of these client configuration QR codes. <strong>Only one device can use a profile at a time</strong>:
+<ul>
+<li><a href="/wireguard/brother-various.png">brother-various</a></li>
+<li><a href="/wireguard/shallow-exotic.png">shallow-exotic</a></li>
+<li><a href="/wireguard/uncle-task.png">uncle-task</a></li>
+<li><a href="/wireguard/script-pizza.png">script-pizza</a></li>
+<li><a href="/wireguard/rely-inherit.png">rely-inherit</a></li>
+</ul></li>
+<li>Enter a name for the tunnel and tap <em>Create Tunnel</em> to save the configuration.</li>
+<li>Tap the switch next to the tunnel's name to enable the VPN. If this is your first time using WireGuard on your iOS device, you will be prompted to accept the VPN connection request.</li>
+<li>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</li>
+</ol>
+
+<hr />
+
+<p><a name="linux"></a></p>
+
+<h3>Linux</h3>
+
+<ol>
+<li><a href="https://www.wireguard.com/install/">Install WireGuard</a>.</li>
+<li>Download one of the client configuration files. <strong>Only one computer can use a profile at a time</strong>. For this example we'll assume you downloaded brother-various:
+<ul>
+<li><a href="/wireguard/brother-various.conf">brother-various</a></li>
+<li><a href="/wireguard/shallow-exotic.conf">shallow-exotic</a></li>
+<li><a href="/wireguard/uncle-task.conf">uncle-task</a></li>
+<li><a href="/wireguard/script-pizza.conf">script-pizza</a></li>
+<li><a href="/wireguard/rely-inherit.conf">rely-inherit</a></li>
+</ul></li>
+<li><p>Move the client configuration file into the correct directory:</p>
+
+<p><code>sudo sh -c 'umask 077; mkdir -p /etc/wireguard; cat &gt; /etc/wireguard/brother-various.conf' &lt; ~/Downloads/brother-various.conf</code></p></li>
+<li><p>(Ubuntu/Debian) For Ubuntu and Debian users you will need to install the <code>openresolv</code> package:</p>
+
+<p><code>sudo apt-get install openresolv</code></p></li>
+<li><p>Use the <code>wg-quick</code> utility to bring up the WireGuard interface:</p>
+
+<p><code>sudo wg-quick up brother-various</code></p></li>
+<li><p>For Linux systems using systemd you can also enable Wireguard at boot:</p>
+
+<p>'sudo systemctl enable wg-quick@brother-various.service'</p></li>
+<li><p>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</p></li>
+<li><p>To stop routing your traffic through WireGuard, simply bring the interface back down:</p>
+
+<p><code>sudo wg-quick down brother-various</code></p></li>
+</ol>
+
+<h4>A note on DNS configuration</h4>
+
+<p>Each client configuration profile includes a <code>DNS</code> command that uses resolvconf to direct DNS traffic to the dnsmasq server that is available via the WireGuard encrypted interface at <code>10.192.122.1</code>. Although resolvconf is a common utility, you may need to use <code>PostUp</code>/<code>PostDown</code> with a different command for your distribution or particular network configuration.</p>
+
+<hr />
+
+<p><a name="macos"></a></p>
+
+<h3>macOS</h3>
+
+<p><strong>WARNING</strong>: The macOS WireGuard client is in early stages of development and still considered experimental. It may be unstable or buggy.</p>
+
+<ol>
+<li>Install <a href="https://brew.sh/">Homebrew</a>, if you haven't already.</li>
+<li><p>Install the WireGuard tools using Homebrew:</p>
+
+<p><code>brew install wireguard-tools</code></p></li>
+<li>Download one of the client configuration files. <strong>Only one computer can use a profile at a time</strong>. For this example we'll assume you downloaded brother-various:
+<ul>
+<li><a href="/wireguard/brother-various.conf">brother-various</a></li>
+<li><a href="/wireguard/shallow-exotic.conf">shallow-exotic</a></li>
+<li><a href="/wireguard/uncle-task.conf">uncle-task</a></li>
+<li><a href="/wireguard/script-pizza.conf">script-pizza</a></li>
+<li><a href="/wireguard/rely-inherit.conf">rely-inherit</a></li>
+</ul></li>
+<li>Move the client configuration file into the WireGuard configuration directory. The following command assumes you downloaded the configuration file into your <code>Downloads</code> folder. (If that's not the case, modify it accordingly):</li>
+</ol>
+
+<p><code>sudo sh -c 'umask 077 &amp;&amp; mkdir -p /etc/wireguard/ &amp;&amp; cat ~/Downloads/brother-various.conf &gt; /etc/wireguard/brother-various.conf'</code></p>
+
+<ol>
+<li><p>Use the <code>wg-quick</code> utility to bring up the WireGuard interface:</p>
+
+<p><code>sudo wg-quick up brother-various</code></p></li>
+<li><p>You should be good to go! You can verify that your traffic is being routed properly by <a href="https://duckduckgo.com/?q=ip+address">looking up your IP address on DuckDuckGo</a>. It should say <em>Your public IP address is 52.15.254.140</em>.</p></li>
+<li><p>You can check the vpn status at any time using <code>wg</code>:
+<code>sudo wg show</code></p></li>
+<li><p>To stop routing your traffic through WireGuard, simply bring the interface back down:</p>
+
+<p><code>sudo wg-quick down brother-various</code></p></li>
+</ol>
+
+<hr />
+
+<p><a name="openwrt"></a></p>
+
+<h3>EXPERIMENTAL: OpenWrt (LEDE)</h3>
+
+<p>As an <strong>unsupported</strong> experiment, these profiles are available for routers running <a href="https://openwrt.org/">OpenWrt</a>. Support requires OpenWrt/LEDE 17.01.4 or later; OpenWrt Chaos Calmer is too old.</p>
+
+<p>OpenWrt devices run Linux, but they're managed through a centralized configuration system called <a href="https://openwrt.org/docs/guide-user/base-system/uci">UCI</a>. Most OpenWrt devices have a web admin interface called LuCI, which hides the complexity of UCI. These WireGuard profiles can be installed through a shell, or through the LuCI web interface.</p>
+
+<p>These profiles will replace the existing Internet connection. As a result, you should only install them when you're connected to the router's WiFi or LAN network interface. If you're logged in remotely, you may be locked out.</p>
+
+<h4>Installing WireGuard software</h4>
+
+<p>Make sure these software packages are installed: <code>luci-app-wireguard</code> and <code>luci-proto-wireguard</code>. To install those packages from the web UI:</p>
+
+<ol>
+<li>Go to the LuCI <em>System:Software</em> page, and click the <em>Update lists</em> button.</li>
+<li>Type <code>wireguard</code> into the <em>Find package</em> box.</li>
+<li>Click on the <em>Available packages (wireguard)</em> tab.</li>
+<li>Click <em>Install</em> next to <code>luci-app-wireguard</code>; go back to step 2 to install <code>luci-proto-wireguard</code> as well.</li>
+</ol>
+
+<p>(If you're managing your router without the LuCI user interface, you can instead <code>opkg update; opkg install kmod-wireguard wireguard-tools</code> .)</p>
+
+<h4>Installing the profile</h4>
+
+<p>Experienced users can install these profiles from the router's SSH command line; place one in a file, and run it as a shell script.</p>
+
+<p>There's also a simple way to install via the web interface. The LuCI <em>System:Startup</em> web page contains a <em>Local Startup</em> text box. It's a shell script which is run each time the router boots up. These WireGuard profiles are designed to be pasted into the <em>Local Startup</em> box, replacing the existing contents. (Make sure to delete any <code>exit 0</code> lines.)</p>
+
+<p>The next time the router reboots, the script will be run. It removes itself automatically. Check the <em>Local Startup</em> box for the status result.</p>
+
+<h4>Changes made by the profile</h4>
+
+<ul>
+<li>A new interface named like <code>poem_walk</code> will be created</li>
+<li>The interface is added to the <em>WAN</em> network zone</li>
+<li>The default route to the Internet is set to the interface. (This will break WAN connectivity, so be sure to install only from WiFi/LAN.)</li>
+<li>The WireGuard keepalive is set to 25 seconds</li>
+<li>System-wide DNS is forced to point at the Streisand server</li>
+</ul>
+
+<p>If you don't like the DNS default, you can change DNS behavior on the <em>Network:DHCP and DNS</em> LuCI page. Put the DNS server address in <em>DNS forwardings</em>. On the <em>Resolv and Hosts Files</em> tab, leave <em>Ignore resolve file</em> checked, unless you want to use your upstream DNS. (You probably don't.)</p>
+
+<p>If you know you aren't behind a NAT device, edit the WireGuard interface to set the keepalive to 0.</p>
+
+<h4>OpenWrt Profiles</h4>
+
+<ul>
+<li><a href="/wireguard/brother-various-openwrt.txt">brother-various</a></li>
+<li><a href="/wireguard/shallow-exotic-openwrt.txt">shallow-exotic</a></li>
+<li><a href="/wireguard/uncle-task-openwrt.txt">uncle-task</a></li>
+<li><a href="/wireguard/script-pizza-openwrt.txt">script-pizza</a></li>
+<li><a href="/wireguard/rely-inherit-openwrt.txt">rely-inherit</a></li>
+</ul>
+</body>
+</html>
